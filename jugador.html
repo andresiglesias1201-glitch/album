@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jugador</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+<h1>Datos del Jugador</h1>
+
+<div id="info"></div>
+
+<br>
+<a href="index.html">Volver</a>
+
+<script>
+const parametros = new URLSearchParams(window.location.search);
+const nombre = parametros.get("nombre");
+
+let datos = {
+    messi: {
+        nombre: "Lionel Messi",
+        edad: 36,
+        pais: "Argentina"
+    },
+    cristiano: {
+        nombre: "Cristiano Ronaldo",
+        edad: 39,
+        pais: "Portugal"
+    }
+};
+
+if(datos[nombre]){
+    document.getElementById("info").innerHTML = `
+        <h2>${datos[nombre].nombre}</h2>
+        <p>Edad: ${datos[nombre].edad}</p>
+        <p>País: ${datos[nombre].pais}</p>
+    `;
+}
+</script>
+
+</body>
+</html>
